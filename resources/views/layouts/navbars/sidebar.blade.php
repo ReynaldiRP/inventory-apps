@@ -6,7 +6,7 @@
         </div>
         <ul class="nav">
             <li @if ($pageSlug == 'dashboard') class="active " @endif>
-                <a href="dashboard">
+                <a href="{{ route('dashboard') }}">
                     <i class="tim-icons icon-chart-pie-36"></i>
                     <p>Dashboard</p>
                 </a>

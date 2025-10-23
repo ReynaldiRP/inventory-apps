@@ -25,6 +25,17 @@ Route::middleware('auth')->group(function () {
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
     Route::resource('receipts', ReceiptController::class);
+
+    Route::group(['prefix' => 'dashboard-analytics'], function () {
+        Route::controller(\App\Http\Controllers\DashboardController::class)->group(function () {
+            Route::get('/product-out-current-month', 'productOutCurrentMonth')->name('dashboard.productOutCurrentMonth');
+            Route::get('/product-in-current-month', 'productInCurrentMonth')->name('dashboard.productInCurrentMonth');
+            Route::get('/product-warning-stock', 'productWarningStock')->name('dashboard.productWarningStock');
+            Route::get('/product-out-per-month', 'productOutPerMonth')->name('dashboard.productOutPerMonth');
+            Route::get('/product-in-per-month', 'productInPerMonth')->name('dashboard.productInPerMonth');
+            Route::get('/newest-receipts', 'newestReceipts')->name('dashboard.newestReceipts');
+        });
+    });
 });
 
 

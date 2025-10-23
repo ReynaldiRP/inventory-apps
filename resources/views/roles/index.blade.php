@@ -6,6 +6,7 @@
                 <div class="card-header">
                     <h4 class="card-title">Table Roles</h4>
                     <a href="{{ route('roles.create') }}" class="btn btn-primary btn-sm float-right">Create New Role</a>
+                    @include('alerts.success', ['key' => 'success'])
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

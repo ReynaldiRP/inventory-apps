@@ -16,7 +16,13 @@
                                         Number
                                     </th>
                                     <th>
-                                        Name
+                                        Type Code
+                                    </th>
+                                    <th>
+                                        Type Name
+                                    </th>
+                                    <th>
+                                        Created At
                                     </th>
                                     <th>
                                         Action

@@ -5,6 +5,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductTypeController;
+use App\Http\Controllers\ProductController;
 
 
 Route::get('/', function () {
@@ -22,6 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('roles', RoleController::class);
     Route::resource('product-types', ProductTypeController::class);
     Route::resource('users', UserController::class);
+    Route::resource('products', ProductController::class);
 });
 
 

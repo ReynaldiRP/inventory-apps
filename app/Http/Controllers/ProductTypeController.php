@@ -9,11 +9,11 @@ class ProductTypeController extends Controller
 {
    public function index(){
         $productTypes = ProductType::latest()->get();
-        return view('productType.index', compact('productTypes'));
+        return view('product_type.index', compact('productTypes'));
     }
 
     public function create(){
-        return view('productType.create');
+        return view('product_type.create');
     }
 
     public function store(Request $request)
@@ -35,7 +35,7 @@ class ProductTypeController extends Controller
 
     public function edit($id){
         $productType = ProductType::findOrFail($id);
-        return view('productType.edit', compact('productType'));
+        return view('product_type.edit', compact('productType'));
     }
 
     public function update(Request $request, $id){

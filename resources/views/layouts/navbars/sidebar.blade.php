@@ -47,8 +47,8 @@
                     <p>Product</p>
                 </a>
             </li>
-            <li @if ($pageSlug == 'notifications') class="active " @endif>
-                <a href="#">
+            <li @if ($pageSlug == 'receipts') class="active " @endif>
+                <a href="{{ route('receipts.index') }}">
                     <i class="tim-icons icon-bell-55"></i>
                     <p>Receipt</p>
                 </a>

@@ -6,7 +6,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductTypeController;
 use App\Http\Controllers\ProductController;
-
+use App\Http\Controllers\ReceiptController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,6 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('product-types', ProductTypeController::class);
     Route::resource('users', UserController::class);
     Route::resource('products', ProductController::class);
+    Route::resource('receipts', ReceiptController::class);
 });
 
 

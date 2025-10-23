@@ -36,7 +36,7 @@
                 </div>
             </li>
             <li @if ($pageSlug == 'icons') class="active " @endif>
-                <a href="#">
+                <a href="/product-types">
                     <i class="tim-icons icon-atom"></i>
                     <p>Product Type</p>
                 </a>

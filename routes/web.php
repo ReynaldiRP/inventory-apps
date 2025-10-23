@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductTypeController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,4 +22,13 @@ Route::middleware('auth')->group(function () {
     Route::resource('roles', RoleController::class);
 });
 
-require __DIR__ . '/auth.php';
+Route::middleware(['auth'])->group(function () {
+    Route::get('/product-types', [ProductTypeController::class, 'index'])->name('product-types.index');
+    Route::get('/product-types/create', [ProductTypeController::class, 'create'])->name('product-types.create');
+    Route::post('/product-types', [ProductTypeController::class, 'store'])->name('product-types.store');
+    Route::get('/product-types/{id}/edit', [ProductTypeController::class, 'edit'])->name('product-types.edit');
+    Route::put('/product-types/{id}', [ProductTypeController::class, 'update'])->name('product-types.update');
+    Route::delete('/product-types/{id}', [ProductTypeController::class, 'destroy'])->name('product-types.destroy');
+});
+
+require __DIR__.'/auth.php';

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('code')->unique();
             $table->string('name');
-            $table->foreignId('type_id')->constrained('products_Type')->onDelete('cascade');
-            $table->string('unit')->unique();
+            $table->foreignId('type_id')->constrained('product_types')->onDelete('cascade');
+            $table->string('unit');
             $table->integer('stock');
             $table->decimal('price', 15, 2);
             $table->timestamps();

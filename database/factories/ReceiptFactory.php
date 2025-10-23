@@ -29,6 +29,7 @@ class ReceiptFactory extends Factory
             'price' => $product->price,
             'type' => fake()->randomElement(['in', 'out']),
             'notes' => fake()->optional()->sentence(),
+            'created_at' => fake()->dateTimeThisYear(),
         ];
     }
 }

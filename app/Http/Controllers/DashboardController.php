@@ -46,7 +46,7 @@ class DashboardController extends Controller
         $monthFunction = "CAST(strftime('%m', created_at) AS INTEGER)";
 
         $productOut = Receipt::where('type', 'out')
-            ->selectRaw("$monthFunction as month, COUNT(*) as count")
+            ->selectRaw("$monthFunction as month, SUM(quantity) as count")
             ->groupBy(DB::raw($monthFunction))
             ->pluck('count', 'month')
             ->toArray();
@@ -70,7 +70,7 @@ class DashboardController extends Controller
         // Query to get the count of products that came in per month
         $monthFunction = "CAST(strftime('%m', created_at) AS INTEGER)";
         $productIn = Receipt::where('type', 'in')
-            ->selectRaw("$monthFunction as month, COUNT(*) as count")
+            ->selectRaw("$monthFunction as month, SUM(quantity) as count")
             ->groupBy(DB::raw($monthFunction))
             ->pluck('count', 'month')
             ->toArray();

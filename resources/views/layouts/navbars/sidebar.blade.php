@@ -42,7 +42,7 @@
                 </a>
             </li>
             <li @if ($pageSlug == 'maps') class="active " @endif>
-                <a href="#">
+                <a href="/products">
                     <i class="tim-icons icon-pin"></i>
                     <p>Product</p>
                 </a>

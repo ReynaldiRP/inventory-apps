@@ -31,4 +31,9 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/product-types/{id}', [ProductTypeController::class, 'destroy'])->name('product-types.destroy');
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/product-types', [ProductTypeController::class, 'index'])->name('product-types.index');
+
+});
+
 require __DIR__.'/auth.php';

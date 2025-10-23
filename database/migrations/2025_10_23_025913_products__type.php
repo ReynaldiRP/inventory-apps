@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('products_Type', function (Blueprint $table) {
+        Schema::create('products_Type', function (Blueprint $table) {
             $table->id();
             $table->string('typeCode')->unique();
-            $table->string('typeName')->unique();
+            $table->string('typeName');
             $table->timestamps();
         });
     }

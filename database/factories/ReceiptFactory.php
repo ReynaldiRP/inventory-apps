@@ -27,6 +27,7 @@ class ReceiptFactory extends Factory
             'product_id' => $product->id,
             'quantity' => fake()->numberBetween(1, 10),
             'price' => $product->price,
+            'type' => fake()->randomElement(['in', 'out']),
             'notes' => fake()->optional()->sentence(),
         ];
     }

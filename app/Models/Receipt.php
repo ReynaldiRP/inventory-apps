@@ -16,6 +16,7 @@ class Receipt extends Model
         'product_id',
         'quantity',
         'price',
+        'type',
         'notes',
     ];
 
